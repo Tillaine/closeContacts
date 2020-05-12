@@ -1,0 +1,47 @@
+{
+  "name": "closecontacts",
+  "version": "1.0.0",
+  "description": "track covid risks",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./server/server.js",
+    "react-dev": "webpack -d --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tillaine/closeContacts.git"
+  },
+  "keywords": [
+    "covid"
+  ],
+  "author": "Bit",
+  "license": "MIT",
+  "dependencies": {
+    "chart.js": "^2.9.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jquery": "^3.5.0",
+    "mongoose": "^5.9.10",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.3",
+    "react": "^16.13.1",
+    "react-chartjs": "^1.2.0",
+    "react-chartjs-2": "^2.9.0",
+    "react-dom": "^16.13.1",
+    "request": "^2.88.2",
+    "webpack": "^4.43.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "bugs": {
+    "url": "https://github.com/Tillaine/closeContacts/issues"
+  },
+  "homepage": "https://github.com/Tillaine/closeContacts#readme"
+}
