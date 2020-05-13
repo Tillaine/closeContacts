@@ -7,8 +7,9 @@ const Contacts = (props) => {
         <div className='contactList'>
             <ul>
                 {props.contacts.map(contact => {
-                    return <Contact key={contact.date} data={contact} />
-                })}
+                        return <Contact key={contact.date} data={contact} />
+                    })
+                }
             </ul>
         </div>
     )

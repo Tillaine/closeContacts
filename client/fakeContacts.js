@@ -1,5 +1,5 @@
 
-
+const { addManyContacts } = require('../server/mongoDB.js') 
 const lNames = ['Cup', 'Bartges', 'Noles', 'Obama', 'Sanchez', 'Moreno', 'Beck'];
 const fNames = ['Evan', 'Nick', 'Lucy', 'Andrew', 'Rachel', 'Michelle', 'Gigi'];
 const random = (arr) => arr[Math.floor(Math.random() * arr.length)]
@@ -8,7 +8,6 @@ const ownMask = [true, false]
 const contactMask = [true, false]
 let date = 1
 const proximity = ['Physical Contact', 'less than 6 feet', 'six feet distance']
-
 
 const MakeContact = () => {
     const contact = {};
@@ -29,7 +28,19 @@ const batchContacts = (num) => {
         contacts.push(MakeContact())
     }
     return contacts
+};
+
+// *********************************
+// Seed database
+// *********************************
+const seed = (num) => {
+   addManyContacts(batchContacts(num))
+   .then(contacts => {
+       console.log(contacts)
+   })
+   .catch(err => console.log('seed err', err))
 }
 
+// seed(14)
 
 module.exports = {batchContacts}
