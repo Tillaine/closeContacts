@@ -51,7 +51,7 @@ let addManyContacts = (contacts) => {
   
 }
 
-let getContact = () => {
+let getContacts = () => {
 return new Promise((resolve, reject) => {
 
     Contact.find((err, Contact) => {
@@ -95,9 +95,7 @@ return new Promise((resolve, reject) => {
 }
 
 
-
-
-module.exports = {addContacts, addManyContacts, updateMongo, findById, deleteContact}
+module.exports = {getContacts, addContacts, addManyContacts, updateMongo, findById, deleteContact}
 
 
 

@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan')
-const routes = require('./router.js')
+const routes = require('./routes.js')
 const cors = require('cors');
 
 
