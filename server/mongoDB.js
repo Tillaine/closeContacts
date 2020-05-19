@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/contacts', { poolSize: 100 });
+console.log('mongoose', mongoose.connect);
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/contacts', {useNewUrlParser: true});
 
 const connection = mongoose.connection;
 
@@ -55,6 +56,7 @@ let getContacts = () => {
 return new Promise((resolve, reject) => {
 
     Contact.find((err, Contact) => {
+
       if (err) {reject(err)}
       else {
         resolve(Contact)

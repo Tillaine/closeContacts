@@ -1,19 +1,25 @@
 import React from 'react'
 import Chart from './Chart.jsx'
 import Contacts from './Contacts.jsx'
-import { batchContacts } from '../fakeContacts'
+import { tempContacts } from '../tempContacts.js'
 
 
 class App extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            contacts : batchContacts(14)
+            contacts : tempContacts
         }
     }
 
+    componentDidMount () {
+        fetch('http://localhost:3000/api/contacts/')
+        .then(data => data.json())
+        .then(data => console.log('fetched', data))
+        .catch(err => console.log(err))
+    }
+
     render () {
-        console.log('batch', this.state.contacts)
        return ( 
         <div className='appContainer'>
             <h1>Goodbye Covid</h1>
