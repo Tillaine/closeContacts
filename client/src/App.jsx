@@ -8,14 +8,18 @@ class App extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            contacts : tempContacts
+            contacts : tempContacts, 
+            risks: []
         }
     }
 
     componentDidMount () {
         fetch('http://localhost:3000/api/contacts/')
         .then(data => data.json())
-        .then(data => console.log('fetched', data))
+        .then(data => {
+            console.log('fetched', data.risks)
+            this.setState({contacts: data.contact, risks: data.risks})
+        })
         .catch(err => console.log(err))
     }
 
@@ -23,7 +27,7 @@ class App extends React.Component {
        return ( 
         <div className='appContainer'>
             <h1>Goodbye Covid</h1>
-            <Chart/>
+            <Chart risks={this.state.risks} contacts={this.state.contacts}/>
             <Contacts contacts={this.state.contacts} />
         </div>
        )

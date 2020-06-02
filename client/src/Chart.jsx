@@ -35,10 +35,11 @@ class Chart extends React.Component {
       }
 
   render() {
-      console.log(this.state)
+    const dates = this.props.contacts.map(contact => contact.date)
+    console.log('risks', this.props.risks)
     const data = {
     
-        labels: ['05/21', '05/22', '05/23', '05/24', '05/25', '05/26', '05/27', '05/28', '05/29', '05/30', '06/01', '06/02', '06/03'],
+        labels: dates,
         datasets: [
             {
                 label: 'Average Monthly Price in $',
@@ -49,7 +50,7 @@ class Chart extends React.Component {
                 maxBarThickness: 8,
                 hoverBackgroundColor: 'rgba(18, 132, 136,0.4)',
                 hoverBorderColor: 'rgba(18, 132, 136 ,1)',
-                data: [1, 2, 3, 4, 4, 5, 6, 7, 5, 4, 3, 2, 2]
+                data: this.props.risks
             }
         ]
        
@@ -62,6 +63,7 @@ class Chart extends React.Component {
     );
   }
 };
+
 
 
 
