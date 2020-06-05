@@ -35,6 +35,7 @@ class Chart extends React.Component {
       }
 
   render() {
+    
     const dates = this.props.contacts.map(contact => contact.date)
     console.log('risks', this.props.risks)
     const data = {
@@ -42,7 +43,7 @@ class Chart extends React.Component {
         labels: dates,
         datasets: [
             {
-                label: 'Average Monthly Price in $',
+                label: 'Risk',
                 type: 'line',
                 backgroundColor: 'rgba(18, 132, 136, 1)',
                 borderColor: 'rgba(18, 132, 136, 1)',
