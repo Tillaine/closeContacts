@@ -1,6 +1,7 @@
 # closeContacts
 Covid contact tracking app 
 
+React, Mongo, Express
 
 Track potential covid exposure. Track dates, social interactions, proximity, symptoms, and locations. 
 
